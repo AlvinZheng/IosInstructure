@@ -17,14 +17,20 @@ class JSONDecodeMapper<M: ModelMapAble>: ModelMapper<M> {
             throw MapError()
         }
     }
+    
     override func map(data: Data) throws -> M{
-        let m = try decoder.decode(M.self, from: data)
+        var m = try decoder.decode(M.self, from: data)
+        //TODO: remove this ,this is an easy way to generate identifier id
+        if var endpoint = m as? EndpointResult{
+            endpoint.id = UUID()
+            return endpoint as! M
+        }
         return m
     }
 
     override init() {
         var d = JSONDecoder()
-//        d.keyDecodingStrategy =
+        d.keyDecodingStrategy = .convertFromSnakeCase
         decoder = d
         super.init()
 

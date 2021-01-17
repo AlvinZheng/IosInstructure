@@ -12,6 +12,11 @@ struct IosInstructureApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView(store: UserStore.shared)
+                .onAppear() {
+                    UserStore.shared.startFetch(interval: 5.0)
+                }.onDisappear(){
+                    UserStore.shared.stopFetch()
+                }
         }
     }
 }

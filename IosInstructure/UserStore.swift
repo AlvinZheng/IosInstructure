@@ -13,11 +13,11 @@ final class UserStore: ObservableObject {
 
     private var timer: Timer?
 
-    @Published var users: [User] = [
-        .init(id: 1, avatar: "avart 1", name: "test1", company: "test company1", email: "test email1"),
-        .init(id: 2, avatar: "avart 2", name: "test2", company: "test company2", email: "test email2"),
-        .init(id: 3, avatar: "avart 3", name: "test3", company: "test company3", email: "test email3"),
-        .init(id: 4, avatar: "avart 4", name: "test4", company: "test company4", email: "test email4"),
+    @Published var results: [EndpointResult] = [
+        EndpointResult.init(currentUserUrl: "test1 current user url", userUrl: "test1 user url", issuesUrl: "test1 issuses url"),
+        EndpointResult.init(currentUserUrl: "test2 current user url", userUrl: "test2 user url", issuesUrl: "test2 issuses url"),
+        EndpointResult.init(currentUserUrl: "test3 current user url", userUrl: "test3 user url", issuesUrl: "test3 issuses url"),
+        EndpointResult.init(currentUserUrl: "test4 current user url", userUrl: "test4 user url", issuesUrl: "test4 issuses url")
     ]
 
     func startFetch(interval: TimeInterval) {
@@ -27,12 +27,17 @@ final class UserStore: ObservableObject {
         }
         timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(fetch), userInfo: nil, repeats: true)
     }
+    
+    func stopFetch() {
+        timer?.invalidate()
+        timer = nil;
+    }
 
-    @objc func fetch() {
-        GithubApi.shared.getUser{[weak self] (response) in
+    @objc private func fetch() {
+        GithubApi.shared.endPointTest{[weak self] (response) in
             switch response {
-            case .Success(let user):
-                self?.users.append(user)
+            case .Success(let result):
+                self?.results.append(result)
             case .Failure(let error):
                 print("fetch error:" + error.localizedDescription)
             }

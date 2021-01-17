@@ -59,4 +59,8 @@ class GithubApi: Api {
     func getUser(handler: ((Response<User>) -> Void)?) {
         caller.callApi(endpoint: GithubEndpoint.user, mapper: JSONDecodeMapper<User>(), handler: handler)
     }
+    
+    func endPointTest(handler: ((Response<EndpointResult>) -> Void)?) {
+        caller.callApi(endpoint: GithubEndpoint.endpointTest, mapper: JSONDecodeMapper<EndpointResult>(), handler: handler)
+    }
 }

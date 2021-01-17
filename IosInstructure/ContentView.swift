@@ -14,11 +14,11 @@ struct ContentView: View {
     @ObservedObject var store: UserStore
     var body: some View {
         NavigationView {
-            List(store.users){user in
+            List(store.results){result in
                 VStack(alignment: .leading
                        , spacing: 4.0, content: {
-                        Text(user.name).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                        Text(user.email).font(.headline)
+                        Text(result.userUrl).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        Text(result.issuesUrl).font(.headline)
                 })
             }.navigationBarTitle(Text("User"))
         }

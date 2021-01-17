@@ -12,13 +12,4 @@ protocol RequestIntercepter {
 }
 
 
-class LogIncepter: RequestIntercepter, ResponseIntercepter {
-    func intercept(request: URLRequest) {
-        print("reqeust: " + request.debugDescription)
-    }
 
-    func intercept(response: URLResponse) {
-        print("response:" + response.debugDescription)
-    }
-
-}
