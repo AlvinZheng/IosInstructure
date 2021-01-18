@@ -19,7 +19,7 @@ class JSONDecodeMapper<M: ModelMapAble>: ModelMapper<M> {
     }
     
     override func map(data: Data) throws -> M{
-        var m = try decoder.decode(M.self, from: data)
+        let m = try decoder.decode(M.self, from: data)
         //TODO: remove this ,this is an easy way to generate identifier id
         if var endpoint = m as? EndpointResult{
             endpoint.id = UUID()
@@ -29,7 +29,7 @@ class JSONDecodeMapper<M: ModelMapAble>: ModelMapper<M> {
     }
 
     override init() {
-        var d = JSONDecoder()
+        let d = JSONDecoder()
         d.keyDecodingStrategy = .convertFromSnakeCase
         decoder = d
         super.init()

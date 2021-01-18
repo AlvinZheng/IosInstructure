@@ -7,6 +7,8 @@
 
 import Foundation
 
+//TODO:
+//super class all all abstract api
 class Api {
 
 }

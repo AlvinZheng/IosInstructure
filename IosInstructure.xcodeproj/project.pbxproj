@@ -13,6 +13,12 @@
 		3A01372025B442C2004E1734 /* CallHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01371F25B442C2004E1734 /* CallHistory.swift */; };
 		3A01372525B443E8004E1734 /* HistoryRecordIntercepter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01372425B443E8004E1734 /* HistoryRecordIntercepter.swift */; };
 		3A01372A25B44414004E1734 /* LogIntercepter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01372925B44414004E1734 /* LogIntercepter.swift */; };
+		64C21C6A25B52A4200C4EBC9 /* EndpointResult+persistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C21C6925B52A4200C4EBC9 /* EndpointResult+persistent.swift */; };
+		64C21C6F25B52A5C00C4EBC9 /* CallHistory+persistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C21C6E25B52A5C00C4EBC9 /* CallHistory+persistent.swift */; };
+		64C21C7425B579B200C4EBC9 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C21C7325B579B200C4EBC9 /* HistoryView.swift */; };
+		64C21C7925B5821900C4EBC9 /* HistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C21C7825B5821900C4EBC9 /* HistoryStore.swift */; };
+		64C21C7E25B582F800C4EBC9 /* HistoryPersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C21C7D25B582F800C4EBC9 /* HistoryPersistent.swift */; };
+		64C21C8325B5844C00C4EBC9 /* EndpointPersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C21C8225B5844C00C4EBC9 /* EndpointPersistent.swift */; };
 		64D0C53825B0538100FCF678 /* IosInstructureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0C53725B0538100FCF678 /* IosInstructureApp.swift */; };
 		64D0C53A25B0538100FCF678 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0C53925B0538100FCF678 /* ContentView.swift */; };
 		64D0C53C25B0545500FCF678 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64D0C53B25B0545500FCF678 /* Assets.xcassets */; };
@@ -32,7 +38,7 @@
 		64D0C5DB25B14F5000FCF678 /* ResponseIntercepter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0C5DA25B14F5000FCF678 /* ResponseIntercepter.swift */; };
 		64D0C5E025B1557200FCF678 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0C5DF25B1557200FCF678 /* User.swift */; };
 		64D0C5ED25B1709500FCF678 /* JSONDecodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0C5EC25B1709500FCF678 /* JSONDecodeMapper.swift */; };
-		64D0C5FE25B190E200FCF678 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0C5FD25B190E200FCF678 /* UserStore.swift */; };
+		64D0C5FE25B190E200FCF678 /* EndPointResultStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0C5FD25B190E200FCF678 /* EndPointResultStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +65,12 @@
 		3A01371F25B442C2004E1734 /* CallHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallHistory.swift; sourceTree = "<group>"; };
 		3A01372425B443E8004E1734 /* HistoryRecordIntercepter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRecordIntercepter.swift; sourceTree = "<group>"; };
 		3A01372925B44414004E1734 /* LogIntercepter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIntercepter.swift; sourceTree = "<group>"; };
+		64C21C6925B52A4200C4EBC9 /* EndpointResult+persistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EndpointResult+persistent.swift"; sourceTree = "<group>"; };
+		64C21C6E25B52A5C00C4EBC9 /* CallHistory+persistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CallHistory+persistent.swift"; sourceTree = "<group>"; };
+		64C21C7325B579B200C4EBC9 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		64C21C7825B5821900C4EBC9 /* HistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStore.swift; sourceTree = "<group>"; };
+		64C21C7D25B582F800C4EBC9 /* HistoryPersistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPersistent.swift; sourceTree = "<group>"; };
+		64C21C8225B5844C00C4EBC9 /* EndpointPersistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointPersistent.swift; sourceTree = "<group>"; };
 		64D0C53425B0538100FCF678 /* IosInstructure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosInstructure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64D0C53725B0538100FCF678 /* IosInstructureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosInstructureApp.swift; sourceTree = "<group>"; };
 		64D0C53925B0538100FCF678 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,7 +96,7 @@
 		64D0C5DA25B14F5000FCF678 /* ResponseIntercepter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseIntercepter.swift; sourceTree = "<group>"; };
 		64D0C5DF25B1557200FCF678 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		64D0C5EC25B1709500FCF678 /* JSONDecodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodeMapper.swift; sourceTree = "<group>"; };
-		64D0C5FD25B190E200FCF678 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
+		64D0C5FD25B190E200FCF678 /* EndPointResultStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointResultStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +136,8 @@
 			children = (
 				3A01370D25B437D7004E1734 /* Persistence.swift */,
 				3A01371525B43939004E1734 /* FilePersistence.swift */,
+				64C21C7D25B582F800C4EBC9 /* HistoryPersistent.swift */,
+				64C21C8225B5844C00C4EBC9 /* EndpointPersistent.swift */,
 			);
 			path = persistent;
 			sourceTree = "<group>";
@@ -157,7 +171,9 @@
 				64D0C56925B0551700FCF678 /* network */,
 				64D0C53725B0538100FCF678 /* IosInstructureApp.swift */,
 				64D0C53925B0538100FCF678 /* ContentView.swift */,
-				64D0C5FD25B190E200FCF678 /* UserStore.swift */,
+				64D0C5FD25B190E200FCF678 /* EndPointResultStore.swift */,
+				64C21C7825B5821900C4EBC9 /* HistoryStore.swift */,
+				64C21C7325B579B200C4EBC9 /* HistoryView.swift */,
 				64D0C53B25B0545500FCF678 /* Assets.xcassets */,
 				64D0C54025B0545500FCF678 /* Info.plist */,
 				64D0C53D25B0545500FCF678 /* Preview Content */,
@@ -225,7 +241,9 @@
 			children = (
 				64D0C5DF25B1557200FCF678 /* User.swift */,
 				3A01371A25B4407F004E1734 /* EndpointResult.swift */,
+				64C21C6925B52A4200C4EBC9 /* EndpointResult+persistent.swift */,
 				3A01371F25B442C2004E1734 /* CallHistory.swift */,
+				64C21C6E25B52A5C00C4EBC9 /* CallHistory+persistent.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -360,22 +378,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				64D0C5A825B067FD00FCF678 /* GithubApiCaller.swift in Sources */,
+				64C21C6F25B52A5C00C4EBC9 /* CallHistory+persistent.swift in Sources */,
 				64D0C5D625B14F3B00FCF678 /* RequestIntercepter.swift in Sources */,
 				3A01370E25B437D7004E1734 /* Persistence.swift in Sources */,
 				64D0C56C25B0557D00FCF678 /* EndPoint.swift in Sources */,
 				64D0C58925B05D7900FCF678 /* SessionManager.swift in Sources */,
 				64D0C5BA25B0751A00FCF678 /* ApiCaller.swift in Sources */,
+				64C21C7425B579B200C4EBC9 /* HistoryView.swift in Sources */,
 				64D0C5AD25B0681800FCF678 /* GithubSessionManager.swift in Sources */,
-				64D0C5FE25B190E200FCF678 /* UserStore.swift in Sources */,
+				64C21C8325B5844C00C4EBC9 /* EndpointPersistent.swift in Sources */,
+				64D0C5FE25B190E200FCF678 /* EndPointResultStore.swift in Sources */,
 				64D0C5E025B1557200FCF678 /* User.swift in Sources */,
+				64C21C7E25B582F800C4EBC9 /* HistoryPersistent.swift in Sources */,
 				64D0C5ED25B1709500FCF678 /* JSONDecodeMapper.swift in Sources */,
 				64D0C5D125B13A0C00FCF678 /* Api.swift in Sources */,
 				64D0C5C625B1365400FCF678 /* GithubApi.swift in Sources */,
 				64D0C5B225B06C9D00FCF678 /* GithubError.swift in Sources */,
 				64D0C5DB25B14F5000FCF678 /* ResponseIntercepter.swift in Sources */,
 				3A01372A25B44414004E1734 /* LogIntercepter.swift in Sources */,
+				64C21C6A25B52A4200C4EBC9 /* EndpointResult+persistent.swift in Sources */,
 				3A01372025B442C2004E1734 /* CallHistory.swift in Sources */,
 				64D0C58E25B0627F00FCF678 /* ModelMapper.swift in Sources */,
+				64C21C7925B5821900C4EBC9 /* HistoryStore.swift in Sources */,
 				3A01371625B43939004E1734 /* FilePersistence.swift in Sources */,
 				3A01372525B443E8004E1734 /* HistoryRecordIntercepter.swift in Sources */,
 				64D0C53A25B0538100FCF678 /* ContentView.swift in Sources */,

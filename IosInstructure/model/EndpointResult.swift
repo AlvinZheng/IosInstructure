@@ -19,6 +19,13 @@ struct EndpointResult: Identifiable   {
         self.userUrl = userUrl
         self.issuesUrl = issuesUrl
     }
+
+    init(uid: UUID, currentUserUrl: String, userUrl: String, issuesUrl: String) {
+        self.id = UUID()
+        self.currentUserUrl = currentUserUrl
+        self.userUrl = userUrl
+        self.issuesUrl = issuesUrl
+    }
 }
 
 extension EndpointResult: ModelMapAble {

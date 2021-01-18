@@ -7,18 +7,25 @@
 
 import Foundation
 
-final class UserStore: ObservableObject {
-    static let shared: UserStore = UserStore()
-    private init() {}
+final class EndPointResultStore: ObservableObject {
+    static let shared: EndPointResultStore = EndPointResultStore()
+    private init() {
+        loadLastOne()
+    }
 
     private var timer: Timer?
 
-    @Published var results: [EndpointResult] = [
-        EndpointResult.init(currentUserUrl: "test1 current user url", userUrl: "test1 user url", issuesUrl: "test1 issuses url"),
-        EndpointResult.init(currentUserUrl: "test2 current user url", userUrl: "test2 user url", issuesUrl: "test2 issuses url"),
-        EndpointResult.init(currentUserUrl: "test3 current user url", userUrl: "test3 user url", issuesUrl: "test3 issuses url"),
-        EndpointResult.init(currentUserUrl: "test4 current user url", userUrl: "test4 user url", issuesUrl: "test4 issuses url")
-    ]
+    @Published var results: [EndpointResult] = []
+
+    private func loadLastOne() {
+        if let last = EndpointPersistent.instance.recoverLast() {
+            print("found last call result")
+            DispatchQueue.main.async {[weak self] in
+                self?.results.append(last)
+            }
+        }
+    }
+
 
     func startFetch(interval: TimeInterval) {
         guard timer == nil else {
@@ -37,7 +44,10 @@ final class UserStore: ObservableObject {
         GithubApi.shared.endPointTest{[weak self] (response) in
             switch response {
             case .Success(let result):
-                self?.results.append(result)
+                _ = EndpointPersistent.instance.saveEndpointResult(result: result)
+                DispatchQueue.main.async {[weak self] in
+                    self?.results.append(result)
+                }
             case .Failure(let error):
                 print("fetch error:" + error.localizedDescription)
             }

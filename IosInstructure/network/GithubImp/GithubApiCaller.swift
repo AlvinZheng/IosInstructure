@@ -26,7 +26,7 @@ class GithubApiCaller: ApiCaller {
 
 
     func genarateRequest(endpoint: EndPoint) -> URLRequest? {
-        var urlString = endpoint.fullUrl
+        let urlString = endpoint.fullUrl
         //token handle
 //        if let token = sessionManager.accessToken {
 //             urlString = urlString + "?access_token=" + token

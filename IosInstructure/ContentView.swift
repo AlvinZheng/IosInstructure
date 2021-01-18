@@ -11,22 +11,33 @@ import Combine
 
 
 struct ContentView: View {
-    @ObservedObject var store: UserStore
+    @ObservedObject var store: EndPointResultStore
     var body: some View {
         NavigationView {
             List(store.results){result in
                 VStack(alignment: .leading
                        , spacing: 4.0, content: {
-                        Text(result.userUrl).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                        Text(result.issuesUrl).font(.headline)
+                        Text("user url" + result.userUrl).font(.headline)
+                        Text("issues url" + result.issuesUrl).font(.headline)
                 })
-            }.navigationBarTitle(Text("User"))
+            }.navigationBarTitle(Text("github Endpoint test"))
+            .navigationBarItems(trailing:
+                NavigationLink(
+                    destination:
+                        HistoryView(store: HistoryStore.shared).onAppear(){
+                            HistoryStore.shared.loadHistory()
+                        },
+                    label: {
+                        Text("call history")
+                    }
+                )
+            )
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(store: UserStore.shared)
+        ContentView(store: EndPointResultStore.shared)
     }
 }

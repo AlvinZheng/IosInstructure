@@ -11,11 +11,11 @@ import SwiftUI
 struct IosInstructureApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(store: UserStore.shared)
+            ContentView(store: EndPointResultStore.shared)
                 .onAppear() {
-                    UserStore.shared.startFetch(interval: 5.0)
+                    EndPointResultStore.shared.startFetch(interval: 5.0)
                 }.onDisappear(){
-                    UserStore.shared.stopFetch()
+                    EndPointResultStore.shared.stopFetch()
                 }
         }
     }

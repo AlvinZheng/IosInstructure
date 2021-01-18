@@ -14,6 +14,7 @@ class HistoryRecordIntercepter: RequestIntercepter {
             let time = Date().timeIntervalSince1970
             let history = CallHistory(time: time, url: urlString)
             print("created call history, time: \(time) url: \(urlString)")
+            _ = HistoryPersistent.instance.saveHistory(history: history)
         }
     }
 }

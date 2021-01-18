@@ -18,4 +18,20 @@ struct CallHistory: Identifiable {
         timeStamp = time
         self.url = url
     }
+
+    init(uid: UUID, time: TimeInterval, url: String) {
+        id = uid
+        timeStamp = time
+        self.url = url
+    }
+}
+
+extension CallHistory: ModelMapAble {
+    init?(data: Data) {
+        return nil
+    }
+
+    init?(string: String) {
+        return nil
+    }
 }
